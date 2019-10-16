@@ -1,5 +1,8 @@
 # https://www.coursera.org/learn/competitive-programming-core-skills/lecture/1cjXH/knapsack-with-repetitions
-
+"""
+Time comlexity: O(nW)
+Space complexity: O(nW)
+"""
 T = dict()
 
 
