@@ -1,3 +1,5 @@
+#!/bin/python3
+
 """
 Insertion sort
 Sort list of integers using shifting sorted array size from left to right
