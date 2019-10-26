@@ -16,15 +16,12 @@ class Solution:
         :return:
         :rtype:
         """
-        has_map = {}
-
+        value_index_map = {}
         for i in range(0, len(nums)):
             complement = target - nums[i]
-            if complement in has_map:
-                return [i, has_map.get(complement)]
-            has_map.update({nums[i]:i})
-
-
+            if complement in value_index_map:
+                return [i, value_index_map.get(complement)]
+            value_index_map.update({nums[i]:i})
 
 nums = [2,7,11,15]
 target = 9
