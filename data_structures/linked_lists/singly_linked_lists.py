@@ -1,4 +1,10 @@
 #!/bin/python3
+"""
+Data Structures by University of California San Diego & National Research University Higher School of Economics
+Topic: Singly-Linked Lists
+https://www.coursera.org/learn/data-structures/lecture/kHhgK/singly-linked-lists
+
+"""
 
 
 class Node:
