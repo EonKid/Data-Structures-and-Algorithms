@@ -14,7 +14,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class SinglyLinkedList:
 
     def __init__(self):
         self.head = None
@@ -92,7 +92,7 @@ class LinkedList:
         if self.tail == node:
             self.tail = node2
 
-linked_list = LinkedList()
+linked_list = SinglyLinkedList()
 
 # Front operations
 print("Push item: ")
