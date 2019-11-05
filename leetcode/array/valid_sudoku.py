@@ -1,4 +1,5 @@
-# https://leetcode.com/problems/valid-sudoku/discuss/416280/Python-Solutions-1-Loop-vs-3-Loops
+#!/bin/python3
+# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/769/
 # row = i + 3 * (sub // 3)
 # col = j + 3 * (sub % 3)
 
