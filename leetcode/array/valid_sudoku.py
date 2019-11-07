@@ -7,32 +7,23 @@
 class Solution:
 
     def isValidSudoku(self, board: [[str]]) -> bool:
-        row_count = {}
-        col_count = {}
-        grid_count = {}
+        rows = [set() for i in range(9)]
+        columns = [set() for i in range(9)]
+        grid = [set() for i in range(9)]
 
         for i in range(9):
             for j in range(9):
                 if board[i][j] is not '.':
-
-                    # check row count
-                    if board[i][j] in row_count and i in row_count[board[i][j]]:
-                        return False
-                    else:
-                        row_count[board[i][j]] = row_count.get(board[i][j], []) + [i]
-
-                    # check colum count
-                    if board[i][j] in col_count and j in col_count[board[i][j]]:
-                        return False
-                    else:
-                        col_count[board[i][j]] = col_count.get(board[i][j], []) + [j]
-
+                    num = board[i][j]
                     # check grid
                     grid_value = 3*(i//3)+j//3
-                    if board[i][j] in grid_count and grid_value in grid_count[board[i][j]]:
+
+                    if num in rows[i] or num in columns[j] or num in grid[grid_value]:
                         return False
                     else:
-                        grid_count[board[i][j]] = grid_count.get(board[i][j], []) + [grid_value]
+                        rows[i].add(num)
+                        columns[j].add(num)
+                        grid[grid_value].add(num)
 
         return True
 
@@ -53,3 +44,5 @@ L = [
 ]
 
 print(sol.isValidSudoku(L))
+
+
