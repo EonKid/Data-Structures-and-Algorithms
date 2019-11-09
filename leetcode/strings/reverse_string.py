@@ -1,6 +1,7 @@
 #!/bin/python3
 # https://leetcode.com/problems/reverse-string/
 
+
 class Solution():
     def reverseString(self, s: [str]) -> None:
         start_index = 0
@@ -14,7 +15,7 @@ class Solution():
               end_index -= 1
 
 sol = Solution()
-string = ["h","e","l","l","o"]
+string = ["h", "e", "l", "l", "o"]
 sol.reverseString(string)
      
 
