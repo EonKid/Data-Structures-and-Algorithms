@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/880/
+# https://leetcode.com/problems/reverse-integer/
 
 
 class Solution:

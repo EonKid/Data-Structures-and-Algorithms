@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
+# https://leetcode.com/problems/single-number/
 
 
 class Solution:
@@ -7,10 +7,11 @@ class Solution:
         result = 0
         for num in nums:
             result ^= num
+            print(num, result)
+
         return result
 
 
 sol = Solution()
 print(sol.singleNumber([4,1,2,1,2]))
-
 

@@ -29,4 +29,5 @@ class Solution:
 
 
 sol = Solution()
+print(ord('z'))
 print(sol.isAnagram("aacc" ,"ccac"))

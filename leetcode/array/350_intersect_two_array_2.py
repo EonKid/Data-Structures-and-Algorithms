@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/
+# https://leetcode.com/problems/intersection-of-two-arrays-ii/
 class Solution:
     def intersect(self, nums1: [int], nums2: [int]) -> [int]:
         L = []

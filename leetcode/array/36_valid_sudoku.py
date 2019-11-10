@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/769/
+# https://leetcode.com/problems/valid-sudoku/
 # row = i + 3 * (sub // 3)
 # col = j + 3 * (sub % 3)
 

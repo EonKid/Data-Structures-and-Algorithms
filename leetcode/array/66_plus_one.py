@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/559/
+# https://leetcode.com/problems/plus-one/
 """
 
 Time complexity: O(n)
