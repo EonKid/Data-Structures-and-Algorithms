@@ -21,5 +21,5 @@ class Solution:
 
 sol = Solution()
 n = 123
-
 print(sol.reverse(n))
+
