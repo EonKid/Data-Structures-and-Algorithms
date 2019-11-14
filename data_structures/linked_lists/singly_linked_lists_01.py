@@ -80,7 +80,7 @@ class SinglyLinkedList:
             p = self.head
             while p.next.next is not None:
                 p = p.next
-            current_node = p
+            current_node = self.tail
             p.next = None
             self.tail = p
         return current_node
