@@ -87,6 +87,14 @@ class Tree:
             if node.right is not None:
                 queue.enqueue(node.right)
 
+    def height(self, next):
+        if next is None:
+            return 0
+        return 1 + max(self.height(next.left), self.height(next.right))
+    def size(self, next):
+        if next is None:
+            return 0
+        return 1 + self.size(next.left) + self.size(next.right)
 
 def get_binary_tree():
     tree = Tree()
@@ -121,3 +129,5 @@ print("DFS: Post-order traversal: ")
 tree.postorder_traversal(tree.root)
 print("BFS: Level traversal")
 tree.level_traversal(tree.root)
+print("Tree height: ",tree.height(tree.root))
+print("Tree size: ", tree.size(tree.root))
