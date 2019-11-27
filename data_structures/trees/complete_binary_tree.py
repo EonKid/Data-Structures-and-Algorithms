@@ -13,6 +13,7 @@ Operations time complexity: O(log(n))
 """
 import math
 
+
 class CompleteBinaryTree:
 
     def __init__(self):
@@ -85,22 +86,54 @@ class CompleteBinaryTree:
         else:
             self.sift_down(i)
 
+    def heapsort(self, alist):
+        self.build_max_heap(alist)
+        for i in range(len(alist) - 1, 0, -1):
+            alist[0], alist[i] = alist[i], alist[0]
+            self.max_heapify(alist, index=0, size=i)
+
+    def build_max_heap(self, alist):
+        length = len(alist)
+        start = math.floor(length//2)
+        while start >= 0:
+            self.max_heapify(alist, index=start, size=length)
+            start = start - 1
+        self.H = alist
+
+    def max_heapify(self,alist, index, size):
+        l = self.left_child(index)
+        r = self.right_child(index)
+        max_index = index
+        if l < size and alist[l] > alist[max_index]:
+            max_index = l
+        if r < size and alist[r] > alist[max_index]:
+            max_index = r
+        if max_index != index:
+            alist[max_index], alist[index] = alist[index], alist[max_index]
+            self.max_heapify(alist, max_index, size)
+
+
+
+
 binary_heap = CompleteBinaryTree()
-L = [3,2,1,7,8,4,10,16,12]
-for num in L:
-    binary_heap.insert(num)
+L = [3 ,2, 2, 1, 0 ,-2, 5, 7]
+binary_heap.build_max_heap(L)
 print(binary_heap.H)
-print("Parent of i", binary_heap.get(binary_heap.parent(2)))
-print("Remove value at index 2")
-binary_heap.remove_val(2)
-print(binary_heap.H)
-print("change priority")
-binary_heap.change_priority(3, 50)
-print(binary_heap.H)
-print("Get max values")
-for i in range(len(binary_heap.H)):
-    max_value = binary_heap.extract_max()
-    print(max_value)
+
+# for num in L:
+#     binary_heap.insert(num)
+# print(binary_heap.H)
+# print("Parent of i", binary_heap.get(binary_heap.parent(2)))
+# print("Remove value at index 2")
+# binary_heap.remove_val(2)
+# print(binary_heap.H)
+# print("change priority")
+# binary_heap.change_priority(3, 50)
+# print(binary_heap.H)
+# print("Get max values")
+# for i in range(len(binary_heap.H)):
+#     max_value = binary_heap.extract_max()
+#     print(max_value)
 
 
 
