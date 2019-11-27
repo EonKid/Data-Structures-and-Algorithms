@@ -47,17 +47,17 @@ class CompleteBinaryTree:
             self.swap(self.parent(i), i)
             i = self.parent(i)
 
-    def sift_down(self, i: int):
+    def sift_down(self, i: int, size: int):
         max_index = i
         l = self.left_child(i)
-        if l <= self.size() - 1 and self.get(l) > self.get(max_index):
+        if l <= size - 1 and self.get(l) > self.get(max_index):
             max_index = l
         r = self.right_child(i)
-        if r <= self.size() - 1 and self.H[r] > self.get(max_index):
+        if r <= size - 1 and self.H[r] > self.get(max_index):
             max_index = r
         if i != max_index:
             self.swap(max_index, i)
-            self.sift_down(max_index)
+            self.sift_down(max_index, size)
 
     def insert(self, key):
         i = self.size()
@@ -70,7 +70,7 @@ class CompleteBinaryTree:
         result = self.get_max()
         self.H[0] = self.H[-1]
         del self.H[-1]
-        self.sift_down(0)
+        self.sift_down(0, self.size())
         return result
 
     def remove_val(self,i):
@@ -89,35 +89,21 @@ class CompleteBinaryTree:
     def heapsort(self, alist):
         self.build_max_heap(alist)
         for i in range(len(alist) - 1, 0, -1):
-            alist[0], alist[i] = alist[i], alist[0]
-            self.max_heapify(alist, index=0, size=i)
+            self.swap(0,i)
+            self.sift_down(0, size=i)
 
     def build_max_heap(self, alist):
-        length = len(alist)
+        self.H = alist
+        length = self.size()
         start = math.floor(length//2)
         while start >= 0:
-            self.max_heapify(alist, index=start, size=length)
+            self.sift_down(start, length)
             start = start - 1
-        self.H = alist
-
-    def max_heapify(self,alist, index, size):
-        l = self.left_child(index)
-        r = self.right_child(index)
-        max_index = index
-        if l < size and alist[l] > alist[max_index]:
-            max_index = l
-        if r < size and alist[r] > alist[max_index]:
-            max_index = r
-        if max_index != index:
-            alist[max_index], alist[index] = alist[index], alist[max_index]
-            self.max_heapify(alist, max_index, size)
-
-
 
 
 binary_heap = CompleteBinaryTree()
-L = [3 ,2, 2, 1, 0 ,-2, 5, 7]
-binary_heap.build_max_heap(L)
+L = [3, 2, 2, 1, 0, -2, 5, 7]
+binary_heap.heapsort(L)
 print(binary_heap.H)
 
 # for num in L:
