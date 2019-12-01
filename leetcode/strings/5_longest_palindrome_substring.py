@@ -12,8 +12,10 @@ class Solution:
 
     def longestPalindrome(self, s: str) -> str:
         length = len(s)
-        if len(s) == 0: return ""
-        if length == 1: return s
+        if len(s) == 0:
+            return ""
+        if length == 1:
+            return s
         result = s[0:1]
         for i in range(len(s)):
             temp_str = self.expand_around_center(s, i, i)
