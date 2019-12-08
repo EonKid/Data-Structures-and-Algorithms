@@ -5,7 +5,6 @@ https://www.coursera.org/learn/data-structures/lecture/EM5D0/naive-implementatio
 """
 
 
-
 class SmallestElement:
 
     def __init__(self, smallest: [int]):
