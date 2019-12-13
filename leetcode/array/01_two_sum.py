@@ -1,8 +1,8 @@
 #!/bin/python3
 # https://leetcode.com/problems/two-sum/
 
-class Solution:
 
+class Solution:
 
     def twoSum(self, nums: [int], target: int) -> [int]:
         """
@@ -22,6 +22,7 @@ class Solution:
             if complement in value_index_map:
                 return [i, value_index_map.get(complement)]
             value_index_map.update({nums[i]:i})
+
 
 nums = [2,7,11,15]
 target = 9
