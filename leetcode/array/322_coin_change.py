@@ -1,6 +1,10 @@
 # python3
 # https://leetcode.com/problems/coin-change/
 
+"""
+Video explanation: https://www.youtube.com/embed/18NVyOI_690
+"""
+
 
 class Solution:
     def coinChange(self, coins: [int], amount: int) -> int:
