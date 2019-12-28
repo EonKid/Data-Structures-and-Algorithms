@@ -1,6 +1,7 @@
 # Uses python3
 import sys
 
+
 def get_majority_element(a, left, right):
     a.sort()
     prev = a[0]
@@ -15,6 +16,7 @@ def get_majority_element(a, left, right):
             current_count = 1
         prev = a[i]
     return -1
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

@@ -12,7 +12,7 @@ Worst case: O(n*n)
 """
 
 
-def find_minimum_index(A: [int], start_index: int) -> int:
+def find_minimum_index(A, start_index):
     minimum_index = start_index
     for start_index in range(start_index+1, len(A)):
         if A[minimum_index] > A[start_index]:
@@ -20,7 +20,7 @@ def find_minimum_index(A: [int], start_index: int) -> int:
     return minimum_index
 
 
-def sort(A: [int]) -> [int]:
+def sort(A):
     """
     List of integer to be sorted
     :param A:

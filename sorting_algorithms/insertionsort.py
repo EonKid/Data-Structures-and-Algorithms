@@ -11,7 +11,7 @@ Worst case: O(n*n)
 """
 
 
-def sort(A: [int]) -> [int]:
+def sort(A):
     for i in range(1, len(A)):
         value = A[i]
         hole = i

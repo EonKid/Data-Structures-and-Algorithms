@@ -12,7 +12,7 @@ Worst case: O(n*n)
 """
 
 
-def sort(A: [int]) -> [int]:
+def sort(A):
     """
     List of integer to be sorted
     :param A:
@@ -31,5 +31,7 @@ def sort(A: [int]) -> [int]:
     return A
 
 
-L = [2, 7, 4, 1, 5, 3]
+# L = [2, 7, 4, 1, 5, 3]
+L = ['t', 'i', 'z', 'c', 'a', 'f']
+
 print(sort(L))

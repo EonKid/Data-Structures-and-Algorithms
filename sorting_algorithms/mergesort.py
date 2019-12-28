@@ -15,7 +15,7 @@ Space complexity: O(n)
 """
 
 
-def merge(L: [int], R: [int], A: [int]):
+def merge(L, R, A):
     i = j = k = 0
     while i < len(L) and j < len(R):
         if L[i] <= R[j]:
@@ -37,13 +37,13 @@ def merge(L: [int], R: [int], A: [int]):
         k += 1
 
 
-def sort(A: [int]):
+def sort(A):
     size = len(A)
     if size < 2:
         return
     mid = int(size / 2)
-    L = [int] * mid
-    R = [int] * (size - mid)
+    L = [None] * mid
+    R = [None] * (size - mid)
     for i in range(0, mid):
         L[i] = A[i]
     for i in range(mid, size):

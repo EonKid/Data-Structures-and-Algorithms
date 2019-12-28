@@ -18,7 +18,7 @@ Space complexity: log(n)
 """
 
 
-def partition_list(A: [int], start_index: int, end_index: int) -> int:
+def partition_list(A, start_index, end_index):
     pivot = A[end_index]
     partition_index = start_index
     for i in range(start_index, end_index):
@@ -29,7 +29,7 @@ def partition_list(A: [int], start_index: int, end_index: int) -> int:
     return partition_index
 
 
-def sort(A: [int], start_index: int, end_index: int):
+def sort(A, start_index, end_index):
     if start_index < end_index:
         partition_index = partition_list(A, start_index, end_index)
         sort(A, start_index, partition_index-1)
