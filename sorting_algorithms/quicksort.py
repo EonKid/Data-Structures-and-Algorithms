@@ -36,6 +36,6 @@ def sort(A, start_index, end_index):
         sort(A, partition_index+1, end_index)
 
 
-data = [2, 4, 1, 6, 8, 5, 3, 7]
+data = [2, 4, 1, 6, 8]
 sort(data, 0, len(data)-1)
 print(data)

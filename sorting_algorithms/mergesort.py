@@ -53,6 +53,6 @@ def sort(A):
     merge(L, R, A)
 
 
-data = [2, 4, 1, 6, 8, 5, 3, 7]
+data = ['a', 'g', 'o', 'r', 't', 'h', 'm', 's']
 sort(data)
 print(data)
