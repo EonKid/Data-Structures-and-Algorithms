@@ -2,30 +2,33 @@
 
 import sys
 
+
 def dfs(v, visited, recur_stack, adj):
     visited[v] = True
     recur_stack[v] = True
     for node in adj[v]:
-        if visited[node] == False:
-            if dfs(node, visited, recur_stack, adj) == True:
+        if not visited[node]:
+            if dfs(node, visited, recur_stack, adj):
                 return True
-        elif recur_stack[node] == True:
+        elif recur_stack[node]:
             return True
     recur_stack[v] = False
     return False
 
+
 def acyclic(adj):
-    visited = [0]*(len(adj))
-    recur_stack = [0]*(len(adj))
+    visited = [False]*(len(adj))
+    recur_stack = [False]*(len(adj))
     for v in range(len(adj)):
-        if visited[v] == False:
+        if not visited[v]:
             if dfs(v, visited, recur_stack, adj):
                 return 1
+
     return 0
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    data = list(map(int, input.split()))
+    # input = sys.stdin.read()
+    data = list(map(int, input().split()))
     n, m = data[0:2]
     data = data[2:]
     edges = list(zip(data[0:(2 * m):2], data[1:(2 * m):2]))
