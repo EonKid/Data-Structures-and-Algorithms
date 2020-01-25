@@ -4,6 +4,7 @@ import sys
 import queue
 from functools import total_ordering
 
+
 @total_ordering
 class Node(object):
 
