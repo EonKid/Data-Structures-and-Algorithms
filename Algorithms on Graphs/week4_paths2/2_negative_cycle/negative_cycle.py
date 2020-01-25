@@ -4,26 +4,21 @@ import sys
 
 
 def negative_cycle(adj, cost):
-    dist = [float('inf')] * len(adj)
+    dist = [-1] * len(adj)
     dist[0] = 0
-    for _ in range(len(adj)-1):
+    for i in range(len(adj)):
         for u in range(len(adj)):
-            i = 0
-            for v in adj[u]:
-                if dist[v] > dist[u] + cost[u][i]:
-                    dist[v] = dist[u] + cost[u][i]
-                else:
-                    i += 1
-    for u in range(len(adj)):
-        i = 0
-        for v in adj[u]:
-            if dist[v] > dist[u] + cost[u][i]:
-                return 1
-            else:
-                i += 1
-
-    return 0
-
+            for index, v in enumerate(adj[u]):
+                if dist[v] > dist[u] + cost[u][index]:
+                    dist[v] = dist[u] + cost[u][index]
+        if i == len(adj) - 2:
+            dist2 = list(dist)
+        if i == len(adj) - 1:
+            dist1 = list(dist)
+    if dist2 == dist1:
+        return 0
+    else:
+        return 1
 
 if __name__ == '__main__':
     input = sys.stdin.read()
@@ -39,3 +34,4 @@ if __name__ == '__main__':
         cost[a - 1].append(w)
     print(negative_cycle(adj, cost))
     # 4 4 1 2 -5 4 1 2 2 3 2 3 1 1
+    # 10 9 1 2 1 6 7 1 8 9 1 9 10 1 3 4 1 7 8 1 4 5 1 5 6 1 2 3 1
