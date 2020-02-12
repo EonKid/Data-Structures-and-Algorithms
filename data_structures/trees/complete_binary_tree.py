@@ -4,7 +4,7 @@ Data Structure: Complete Binary Tree
 https://www.coursera.org/learn/data-structures/lecture/gl5Ni/complete-binary-trees
 
 Description: A binary tree is complete if all its levels are filled except
-             possibly the last one which isfilled from left to right.
+             possibly the last one which is filled from left to right.
 
 Height with n node: log(n)
 Total nodes when l level = pow(2,l) - 1
