@@ -2,7 +2,7 @@
 https://www.hackerrank.com/challenges/balanced-brackets/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=stacks-queues
 
 """
-from data_structures.stacks.stacks import Stack
+from data_structures_algorithms.stacks.stacks import Stack
 
 def isBalanced(s):
     if len(s) == 0: return True

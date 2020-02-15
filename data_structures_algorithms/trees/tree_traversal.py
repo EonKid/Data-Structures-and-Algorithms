@@ -3,7 +3,7 @@ Data Structures: DFS In-order traversal
 https://www.coursera.org/learn/data-structures/lecture/fr51b/tree-traversal
 """
 
-from data_structures.queues.queue import Queue
+from data_structures_algorithms.queues.queue import Queue
 
 
 class Node:
