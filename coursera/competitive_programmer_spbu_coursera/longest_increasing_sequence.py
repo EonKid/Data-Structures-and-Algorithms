@@ -74,5 +74,5 @@ s = [8, 2, 3, 4, 5, 6, 7]
 
 # lis_sol_1(s)
 # lis_sol_2(s)
-print(lis_sol_3(s, -1))
+lis_sol_2(s)
 
