@@ -28,4 +28,3 @@ print(binary_search(nums, 100))
 
 
 
-
