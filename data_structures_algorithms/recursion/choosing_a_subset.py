@@ -1,4 +1,5 @@
 """
+https://see.stanford.edu/materials/icspacs106b/Lecture08.pdf
 Given N things, how many different ways can you choose K of them?
 • e.g. given a dorm of 60 people, how many different groups of 4 people can go together to Flicks?
 • N-choose-K, written as C(n, k)
