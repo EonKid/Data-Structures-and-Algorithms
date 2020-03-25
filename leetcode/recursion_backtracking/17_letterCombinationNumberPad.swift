@@ -22,7 +22,6 @@ class Solution1 {
                 result.append(combination)
             }else{
                 if let letters = numberPadDict[String(next[0])]{
-                    print(letters)
                     for letter in letters{
                         let startIndex = next.index(next.startIndex, offsetBy: 1)
                         let restString = String(next[startIndex...])

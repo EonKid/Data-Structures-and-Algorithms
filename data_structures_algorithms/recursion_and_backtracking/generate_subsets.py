@@ -13,4 +13,4 @@ def generate_all_subsets(s: str, rest_str: str):
         generate_all_subsets(s, rest_str[1:])
 
 
-generate_all_subsets("", "abcd")
+generate_all_subsets("", "123")
