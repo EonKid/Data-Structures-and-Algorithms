@@ -61,7 +61,7 @@
             let m = board.count
             let n = board[0].count
             let arrWord = Array(word)
-            arrVisited = Array.init(repeating: Array.init(repeating: false, count: n), count: m)
+            //arrVisited = Array.init(repeating: Array.init(repeating: false, count: n), count: m)
 
                for i in 0 ..< m{
                     for j in 0 ..< n{
