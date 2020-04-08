@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/palindrome-partitioning/submissions/
+// Time complexity : n * pow(2, n)
 
 
    class Solution {
