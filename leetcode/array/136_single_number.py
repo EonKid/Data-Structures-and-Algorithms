@@ -6,8 +6,9 @@ class Solution:
     def singleNumber(self, nums: [int]) -> int:
         result = 0
         for num in nums:
-            result ^= num
             print(num, result)
+            result ^= num
+
 
         return result
 
