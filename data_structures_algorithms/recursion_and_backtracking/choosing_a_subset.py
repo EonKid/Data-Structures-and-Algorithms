@@ -12,6 +12,7 @@ Simplest base case
 """
 
 
+
 def choose_a_subset(n: int, k: int):
     if k == 0 or k == n:
         return 1
