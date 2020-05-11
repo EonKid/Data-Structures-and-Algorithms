@@ -13,10 +13,11 @@ def knapsack_without_repetitions_recusrive(w: [int], v: [int], u: int, i: int):
         if i == 0:
             T[u, i] = 0
         else:
+            #without current item
             T[u, i] = knapsack_without_repetitions_recusrive(w, v, u, i - 1)
             if u >= w[i - 1]:
+                #with current item
                 T[u, i] = max(T[u, i], knapsack_without_repetitions_recusrive(w, v, u - w[i - 1], i - 1) + v[i - 1])
-
     return T[u, i]
 
 
@@ -31,6 +32,8 @@ def knapsack_without_repetitions_iterative(W: int, w: [int], v: [int]):
             A[u][i] = A[u][i - 1]
             if u >= w[i - 1]:
                 A[u][i] = max(A[u][i], A[u - w[i - 1]][i - 1] + v[i - 1])
+    for item in A:
+        print(item)
     return A[W][len(w)]
 
 
