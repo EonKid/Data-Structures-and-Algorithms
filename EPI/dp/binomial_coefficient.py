@@ -20,5 +20,5 @@ def binomial_coefficient(n: int, k: int):
     return T[n,k]
 
 
-print("binomial coefficient: ", binomial_coefficient(5, 2))
+print("binomial coefficient: ", binomial_coefficient(4, 2))
 
