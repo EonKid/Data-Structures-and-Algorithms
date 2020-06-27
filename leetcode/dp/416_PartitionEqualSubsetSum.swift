@@ -14,7 +14,27 @@ class Solution {
 		 let target = sumOfNums / k
          if arrData.max() ?? 0 > target{ return false }
 		 arrData.sort()
-		 return dfs(arrData, 0, target, nums.count - 1)
+
+        // dp solution : O(n*n)
+        /*
+        var dp =  Array.init(repeating: false, count: target + 1)
+        return dpSol(nums, target, &dp)
+        */
+        return dfs(arrData, 0, target, nums.count - 1)
+    }
+
+    func dpSol(_ nums: [Int], _ target: Int, _ dp: inout [Bool]) -> Bool{
+        let n = nums.count
+        dp[0] = true
+
+        for num in nums{
+            for i in stride(from:target, to: -1, by: -1){
+                if i >= num{
+                    dp[i] = dp[i] || dp[i - num]
+                }
+            }
+        }
+        return dp[target]
     }
 
     func dfs(_ nums: [Int], _ sum: Int, _ target: Int, _ index: Int) -> Bool{
