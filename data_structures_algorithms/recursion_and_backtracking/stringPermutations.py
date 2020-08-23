@@ -15,7 +15,7 @@ def string_permutations_iterative(s: str):
                 temp = tempStr[0:k] + s[i] + tempStr[k:]
                 pList.append(temp)
             j -= 1
-    print(pList)
+    #print(pList)
 
 
 def string_permutations(current: str, remaining: str):
@@ -28,6 +28,6 @@ def string_permutations(current: str, remaining: str):
             string_permutations(next_str, remaining_str)
 
 
-data = "cat"
+data = "()()()"
 string_permutations("", data)
 string_permutations_iterative(data)
