@@ -36,5 +36,40 @@
                     return i == sizeP
         }
 
+
+        func memo(_ s: [Character], _ p: [Character]) -> Bool{
+            if p.count == 0{ return s.count == 0  }
+            var sizeS = s.count
+            var sizeP = p.count
+            var dp = Array.init(repeating: Array.init(repeating: false, count: sizeP + 1), count: sizeS + 1)
+            dp[0][0] = true
+
+
+            //fill for *
+            for j in 1 ... sizeP{
+                if p[j - 1] == "*" {
+                dp[0][j] = dp[0][j - 1]
+                }
+            }
+
+            if s.count == 0{
+                return dp[0][p.count]
+            }
+
+            for i in 1 ... sizeS{
+                for j in 1 ... sizeP {
+                    if s[i - 1] == p[j - 1] || p[j - 1] == "?"{
+                        dp[i][j] = dp[i - 1][j  - 1]
+                    }
+                    if p[j - 1] == "*"{
+                        dp[i][j] = dp[i - 1][j] || dp[i][j - 1] || dp[i - 1][j - 1]
+                    }
+                }
+            }
+            return dp[sizeS][sizeP]
+        }
+
+
+
     }
 
