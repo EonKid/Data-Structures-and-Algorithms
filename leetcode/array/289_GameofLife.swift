@@ -4,6 +4,8 @@
 class Solution {
     func gameOfLife(_ board: inout [[Int]]) {
 
+       /*
+       // Time complexity - O(m*n) space : O(m*n)
          let rowCount = board.count
 		 let colCount = board[0].count
 
@@ -41,7 +43,53 @@ class Solution {
 						}
 
 			}
+         */
 
+         //Time complexity - O(m*n) Space : O(1)
+         let rowCount = board.count
+		 let colCount = board[0].count
+
+
+		  var directions = [[-1, 0], [-1,1], [0, 1],
+                             [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]]
+
+			for i in stride(from: 0, to: rowCount, by: 1){
+					for j in stride(from: 0, to: colCount, by: 1){
+								var liveCount = 0
+								for dir in directions{
+										let x = i + dir[0]
+										let y = j + dir[1]
+										if x >= 0 && x < rowCount && y >= 0 && y < colCount && board[x][y] >= 1{
+											liveCount += 1
+										}
+								}
+                                if (board[i][j] >= 1){
+                                    if (liveCount < 2 || liveCount > 3) {
+                                        board[i][j] = 2;
+                                    }
+                                }
+                                else{
+                                    if (liveCount == 3) {
+                                        board[i][j] = -1;
+                                    }
+                                }
+
+						}
+
+			}
+
+			for i in stride(from: 0, to: rowCount, by: 1){
+					for j in stride(from: 0, to: colCount, by: 1){
+
+                                if (board[i][j] == 2) {
+                                    board[i][j] = 0;
+                                }
+                                else if (board[i][j] == -1) {
+                                    board[i][j] = 1;
+                                }
+						}
+
+			}
 
     }
 }
