@@ -5,6 +5,7 @@ from collections import namedtuple
 
 Answer = namedtuple('answer_type', 'i j len')
 
+
 def solve(s, t):
 	ans = Answer(0, 0, 0)
 	for i in range(len(s)):
@@ -13,6 +14,7 @@ def solve(s, t):
 				if (l > ans.len) and (s[i:i+l] == t[j:j+l]):
 					ans = Answer(i, j, l)
 	return ans
+
 
 for line in sys.stdin.readlines():
 	s, t = line.split()
