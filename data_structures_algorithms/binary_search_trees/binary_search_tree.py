@@ -113,7 +113,7 @@ class BinarySearchTree:
             current_node = current_node.left
         return current_node
 
-    def delete(self,key, root: Node) -> Node:
+    def delete(self, key, root: Node) -> Node:
         """
         Removes node N from the tree
         :param N:
@@ -127,7 +127,10 @@ class BinarySearchTree:
             root.left = self.delete(key, root.left)
         elif key > root.key:
             root.right = self.delete(key, root.right)
+        # If key is same as root's key, then this is the node
+        # to be deleted
         else:
+            # Node with only one child or no child
             if root.left is None:
                 temp = root.right
                 root = None
@@ -136,6 +139,10 @@ class BinarySearchTree:
                 temp = root.left
                 root = None
                 return temp
+
+            # Node with two children:
+            # Get the in-order successor
+            # (smallest in the right subtree)
             temp = self.min_value(root.right)
             root.key = temp.key
             root.right = self.delete(temp.key, root.right)
@@ -149,19 +156,22 @@ class BinarySearchTree:
         self.inorder_traversal(node.right)
 
 
-node = Node(key=-10)
+node = Node(key=50)
 bst = BinarySearchTree(node)
-bst.insert(-3, bst.root)
-bst.insert(0, bst.root)
-bst.insert(5, bst.root)
-bst.insert(9, bst.root)
-
-# bst.inorder_traversal(bst.root)
+bst.insert(30, bst.root)
+bst.insert(20, bst.root)
+bst.insert(40, bst.root)
+bst.insert(70, bst.root)
+bst.insert(60, bst.root)
+bst.insert(80, bst.root)
+bst.inorder_traversal(bst.root)
 # print(bst.range_search(5,12,bst.root))
 # search_node = bst.find(13, bst.root)
 # print('parent', search_node.parent.key)
 # print('search', bst.next(search_node).key)
-# bst.delete(13,bst.root)
+bst.delete(20,bst.root)
+bst.delete(30,bst.root)
+bst.delete(50,bst.root)
 print("traverse")
 bst.inorder_traversal(bst.root)
 # print(bst.left_descendant(search_node).key)
