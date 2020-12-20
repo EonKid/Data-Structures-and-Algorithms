@@ -6,13 +6,16 @@ import sys
 def dfs(v, visited, recur_stack, adj):
     visited[v] = True
     recur_stack[v] = True
+    print("visited:: "+ str(v))
     for node in adj[v]:
         if not visited[node]:
             if dfs(node, visited, recur_stack, adj):
                 return True
         elif recur_stack[node]:
+            print("cycle at:: " + str(node))
             return True
     recur_stack[v] = False
+    print("returned:: " + str(v))
     return False
 
 
