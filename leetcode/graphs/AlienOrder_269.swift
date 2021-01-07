@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/alien-dictionary/
 
 
+
 class Solution{
 
     func alienOrder(_ words: [String]) -> String{
@@ -35,9 +36,12 @@ class Solution{
                 let charOut = Character(String(wordOut[j]))
 
                 if charIn != charOut{
-                    let index = Int8(charIn.asciiValue!) - Int8(Character("a").asciiValue!)
-                    indegrees[Int(index)] += 1
-                    adjList[charOut]?.insert(charIn)
+                    if !(adjList[charOut]?.contains(charIn))! {
+                        let index = Int8(charIn.asciiValue!) - Int8(Character("a").asciiValue!)
+                        indegrees[Int(index)] += 1
+                        adjList[charOut]?.insert(charIn)
+                    }
+                    break
                 }
             }
 
@@ -76,9 +80,5 @@ class Solution{
 }
 
 let solAlien = Solution()
-let words = [
-  "z",
-  "x"
-
-]
+let words =  ["z","x", "z"]
 print("Alien order: \(solAlien.alienOrder(words))")
