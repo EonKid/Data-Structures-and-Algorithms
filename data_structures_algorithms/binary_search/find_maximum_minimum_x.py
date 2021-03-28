@@ -11,7 +11,7 @@ def find_maximum_closest(A: [int], x: int):
 
     while r > l + 1:
         m = (l + r) // 2
-        if A[m] < x:
+        if A[m] <= x:
             l = m
         else:
             r = m
