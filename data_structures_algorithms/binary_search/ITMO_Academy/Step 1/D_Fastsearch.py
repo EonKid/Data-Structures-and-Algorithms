@@ -7,6 +7,8 @@ query = []
 for i in range(k):
     query.append(list(map(int, input().split())))
 results = []
+
+
 def bSearch_right(nums:[int], a: int):
     l = -1
     r = n
@@ -18,6 +20,7 @@ def bSearch_right(nums:[int], a: int):
             r = m
     return r + 1
 
+
 def bSearch_left(nums: [int], b: int):
     l = -1
     r = n
@@ -28,6 +31,7 @@ def bSearch_left(nums: [int], b: int):
         else:
             r = m
     return l + 1
+
 
 for pair in query:
     a = pair[0]
